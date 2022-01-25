@@ -10,7 +10,7 @@ const TextStyle1 = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 25
 );
-const heightTextStyle= TextStyle(fontSize: 25, fontFamily: 'Ubuntu');
+const heightTextStyle= TextStyle( fontFamily: 'Ubuntu');
 const heightNumberTextStyle=TextStyle(fontFamily: 'Ubuntu',fontWeight: FontWeight.w900,fontSize: 60
 );
 const cmTextStyle=TextStyle(
@@ -26,7 +26,7 @@ const slidertheme=SliderThemeData(
   inactiveTrackColor: Colors.grey,
   thumbColor: Color(0xFFEB1555),
 );
-const weightTextStyle =TextStyle(fontFamily: 'Ubuntu', fontSize: 25);
+const weightTextStyle =TextStyle(fontFamily: 'Ubuntu');
 const weightnumberstyle=TextStyle(
   fontFamily: 'Ubuntu',
   fontSize: 40,

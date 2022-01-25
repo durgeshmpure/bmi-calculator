@@ -12,7 +12,6 @@ class GenderIcon extends StatelessWidget {
       children: [
         Icon(
           Icons,
-          size: 125,
         ),
         SizedBox(
             height:10
@@ -21,7 +20,7 @@ class GenderIcon extends StatelessWidget {
           title,
           style: TextStyle(
             fontFamily: 'Ubuntu',
-            fontSize: 25,
+
           ),
         )
       ],

@@ -17,8 +17,6 @@ class Roundbox extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: colour,
         ),
-        height: containerHeight,
-        width: containerWidth,
       ),
     );
   }

@@ -20,7 +20,7 @@ class bmiApp extends StatelessWidget {
         body: Inputpage(),
         appBar: AppBar(
           title: Text(
-            '                            BMI Calculator',
+            'BMI Calculator',
             style: TextStyle(
               fontFamily: 'Ubuntu'
             ),

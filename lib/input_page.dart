@@ -61,42 +61,44 @@ class _InputpageState extends State<Inputpage> {
           Expanded(
             child: Roundbox(
                 colour: activeColor,
-                widget1: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'HEIGHT',
-                      style: heightTextStyle,
-                    ),
-                    Row(
-                        textBaseline: TextBaseline.alphabetic,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.baseline,
-                        children: [
-                          Text(
-                            height.toString(),
-                            style: heightNumberTextStyle
-                          ),
-                          Text(
-                            'CM',
-                            style: cmTextStyle,
-                          )
-                        ]),
-                    SliderTheme(
-                      data: slidertheme,
-                      child: Slider(
-                        value: height.toDouble(),
-                        min: 120,
-                        max: 220,
-                        onChanged: (double newValue) {
-                          setState(() {
-                            height = newValue.toInt();
-                          });
-                        },
+                widget1: Wrap(
+                  children: [Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'HEIGHT',
+                        style: heightTextStyle,
                       ),
-                    )
-                  ],
-                )),
+                      Row(
+                          textBaseline: TextBaseline.alphabetic,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          children: [
+                            Text(
+                              height.toString(),
+                              style: heightNumberTextStyle
+                            ),
+                            Text(
+                              'CM',
+                              style: cmTextStyle,
+                            )
+                          ]),
+                      SliderTheme(
+                        data: slidertheme,
+                        child: Slider(
+                          value: height.toDouble(),
+                          min: 120,
+                          max: 220,
+                          onChanged: (double newValue) {
+                            setState(() {
+                              height = newValue.toInt();
+                            });
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                ])),
           ),
           Expanded(
             child: Row(children: [
@@ -128,51 +130,49 @@ class _InputpageState extends State<Inputpage> {
                         SizedBox(
                           height: 10,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            RawMaterialButton(
-                              onPressed: () {
-                                setState(() {
-                                  if (weight < 100) {
-                                    if (weight >= 0) {
-                                      weight++;
+                        FittedBox(
+                          child: Row(
+                            children: [
+                              RawMaterialButton(
+                                onPressed: () {
+                                  setState(() {
+                                    if (weight < 100) {
+                                      if (weight >= 0) {
+                                        weight++;
+                                      }
                                     }
-                                  }
-                                });
-                              },
-                              child: Icon(
-                                Icons.add,
-                                size: 30,
+                                  });
+                                },
+                                child: Icon(
+                                  Icons.add,
+                                  size: 30,
+                                ),
+                                elevation: 10,
+                                shape: CircleBorder(),
+                                fillColor: Color(0xFF4C4F5E),
                               ),
-                              constraints:
-                                  BoxConstraints(minWidth: 56, minHeight: 56),
-                              elevation: 10,
-                              shape: CircleBorder(),
-                              fillColor: Color(0xFF4C4F5E),
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            RawMaterialButton(
-                              onPressed: () {
-                                setState(() {
-                                  if (weight > 0) {
-                                    weight--;
-                                  }
-                                });
-                              },
-                              child: Icon(
-                                Icons.remove,
-                                size: 30,
+                              SizedBox(
+                                width: 20,
                               ),
-                              constraints:
-                                  BoxConstraints(minWidth: 56, minHeight: 56),
-                              elevation: 10,
-                              shape: CircleBorder(),
-                              fillColor: Color(0xFF4C4F5E),
-                            ),
-                          ],
+                              RawMaterialButton(
+                                onPressed: () {
+                                  setState(() {
+                                    if (weight > 0) {
+                                      weight--;
+                                    }
+                                  });
+                                },
+                                child: Icon(
+                                  Icons.remove,
+                                  size: 30,
+                                ),
+
+                                elevation: 10,
+                                shape: CircleBorder(),
+                                fillColor: Color(0xFF4C4F5E),
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     )),
@@ -187,7 +187,7 @@ class _InputpageState extends State<Inputpage> {
                           'AGE',
                           style: TextStyle(
                             fontFamily: 'Ubuntu',
-                            fontSize: 26,
+
                           ),
                         ),
                         Row(
@@ -209,49 +209,46 @@ class _InputpageState extends State<Inputpage> {
                         SizedBox(
                           height: 10,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            RawMaterialButton(
-                              onPressed: () {
-                                setState(() {
-                                  if (age < 100) {
-                                    age++;
-                                  }
-                                });
-                              },
-                              child: Icon(
-                                Icons.add,
-                                size: 30,
+                        FittedBox(
+                          child: Row(
+                            children: [
+                              RawMaterialButton(
+                                onPressed: () {
+                                  setState(() {
+                                    if (age < 100) {
+                                      age++;
+                                    }
+                                  });
+                                },
+                                child: Icon(
+                                  Icons.add,
+                                  size: 30,
+                                ),
+                                elevation: 10,
+                                shape: CircleBorder(),
+                                fillColor: Color(0xFF4C4F5E),
                               ),
-                              constraints:
-                                  BoxConstraints(minWidth: 56, minHeight: 56),
-                              elevation: 10,
-                              shape: CircleBorder(),
-                              fillColor: Color(0xFF4C4F5E),
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            RawMaterialButton(
-                              onPressed: () {
-                                setState(() {
-                                  if (age > 1) {
-                                    age--;
-                                  }
-                                });
-                              },
-                              child: Icon(
-                                Icons.remove,
-                                size: 30,
+                              SizedBox(
+                                width: 20,
                               ),
-                              constraints:
-                                  BoxConstraints(minWidth: 56, minHeight: 56),
-                              elevation: 10,
-                              shape: CircleBorder(),
-                              fillColor: Color(0xFF4C4F5E),
-                            ),
-                          ],
+                              RawMaterialButton(
+                                onPressed: () {
+                                  setState(() {
+                                    if (age > 1) {
+                                      age--;
+                                    }
+                                  });
+                                },
+                                child: Icon(
+                                  Icons.remove,
+                                  size: 30,
+                                ),
+                                elevation: 10,
+                                shape: CircleBorder(),
+                                fillColor: Color(0xFF4C4F5E),
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     )),
